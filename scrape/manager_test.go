@@ -829,7 +829,7 @@ func TestManagerCTZeroIngestion(t *testing.T) {
 								// We can implement this, but we want to potentially get rid of OM 1.0 CT lines
 								require.Equal(t, float64(timestamppb.New(ctTs).AsTime().UnixNano())/1e9, createdSeriesSamples[0].f)
 							} else {
-								require.Len(t, createdSeriesSamples, 0)
+								require.Empty(t, createdSeriesSamples)
 							}
 						})
 					}
